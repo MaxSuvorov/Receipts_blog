@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Написать рецепт
+{% endblock %}
+
+{% block content %}
+    <h1>Вперёд! Расскажи все секреты гастрономического оргазма :></h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <button type="submit" class="btn btn-success">Порадовать читателей</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
